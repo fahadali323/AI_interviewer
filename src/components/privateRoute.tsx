@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import supabase from '../lib/supabase';
-import GenerateQuestions from '../pages/generateQuestionsPage';
+import GenerateQuestions from '../pages/GenerateQuestionsPage';
 
 const PrivateRoute = () => {
     const [session, setSession] = useState({});

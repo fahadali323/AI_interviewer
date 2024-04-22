@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Navbar from '../components/navbar';
 import openai from '../lib/openaiAPI';
 
-function GenerateQuestions() {
+function GenerateQuestionsPage() {
     const [input, setInput] = useState("");
     const [output, setOutput] = useState<string | null>("");
     const [error, setError] = useState(false);
@@ -37,4 +37,4 @@ function GenerateQuestions() {
     )
 }
   
-  export default GenerateQuestions;
+  export default GenerateQuestionsPage;

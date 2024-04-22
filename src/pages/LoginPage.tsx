@@ -1,6 +1,6 @@
 import supabase from "../lib/supabase";
 
-function Login() {
+function LoginPage() {
     return (
         <div className="flex justify-center items-center min-h-screen bg-cover bg-gradient-to-r from-blue-500 to-black-500">
             <div className="flex flex-col items-center space-y-5">
@@ -19,4 +19,4 @@ function Login() {
     )
 }
 
-export default Login;
+export default LoginPage;

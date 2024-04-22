@@ -9,7 +9,6 @@ const PrivateRoute = () => {
     useEffect(() => {
         async function getCurrentSession() {
             await supabase.auth.getSession().then((value) => {
-                // value.data.user
                 if (value.data?.session) {
                     setSession(value.data.session);
                 }
@@ -19,7 +18,7 @@ const PrivateRoute = () => {
         supabase.auth.onAuthStateChange((event, session) => {
             setSession(session!);
         })
-    }, [])
+    }, []);
 
     return session ? <GenerateQuestions /> : <Navigate to="/loginPage" />;
 }

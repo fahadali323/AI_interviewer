@@ -1,5 +1,4 @@
-import { BrowserRouter as Router, Routes, BrowserRouter, Route } from "react-router-dom";
-import Navbar from "./components/navbar";
+import { Routes, BrowserRouter, Route } from "react-router-dom";
 import GenerateQuestions from "./pages/generateQuestionsPage";
 import PrivateRoute from "./components/privateRoute";
 import Login from "./pages/loginPage";

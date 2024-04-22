@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import Navbar from '../components/navbar';
 import openai from '../lib/openaiAPI';
+import { supabase } from '@supabase/auth-ui-shared';
 
 function GenerateQuestions() {
     const [input, setInput] = useState("");

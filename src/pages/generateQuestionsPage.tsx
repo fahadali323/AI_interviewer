@@ -4,7 +4,6 @@ import Navbar from '../components/navbar';
 import openai from '../lib/openaiAPI';
 
 function GenerateQuestions() {
-    const navigate = useNavigate();
     const [input, setInput] = useState("");
     const [output, setOutput] = useState<string | null>("");
     const [error, setError] = useState(false);
@@ -29,6 +28,7 @@ function GenerateQuestions() {
 
     return (
         <div className="flex flex-col min-h-screen space-y-12">
+            <Navbar />
             <div className="flex flex-col justify-center items-center space-y-12">
                 <h1 className="mb-4 text-4xl font-mono leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-black">Enter a job description</h1>
                 <textarea value={input} onChange={handleInputChange} className="resize-none py-3 px-4 block w-96 border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none outline outline-1"></textarea>

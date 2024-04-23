@@ -15,15 +15,27 @@ function Navbar() {
                 <li>
                     <a
                         className="block font-mono"
-                        href="/generateQuestions"
+                        href="/generateQuestionsPage"
                     >Interopers AI</a>
                 </li>
                 <li>
                     <a
                         className="block font-mono" 
-                        href="/discussion"
+                        href="/discussionPage"
                     >Discussion</a>
-                </li>                  
+                </li>
+                <li>
+                    <a
+                        className="block font-mono" 
+                        href="/practicePage"
+                    >Practice</a>
+                </li>
+                <li>
+                    <a
+                        className="block font-mono" 
+                        href="/pricingPage"
+                    >Pricing</a>
+                </li>                 
                 <li>
                     <button className="font-mono text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" 
                         onClick={() => signOutUser()}

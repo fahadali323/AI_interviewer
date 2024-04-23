@@ -1,28 +1,37 @@
 import { useState } from 'react'
-import Navbar from '../components/navbar';
+import Navbar from '../components/Navbar';
 import openai from '../lib/openaiAPI';
+import InterviewPage from './InterviewPage';
 
 function GenerateQuestionsPage() {
-    const [input, setInput] = useState("");
+    const [input, setInput] = useState<string>("");
     const [output, setOutput] = useState<string | null>("");
-    const [error, setError] = useState(false);
+    const [error, setError] = useState("");
+
+    const example = "1. Can you tell us about a time when you had to work on a team project? What role did you play and what was the outcome?\n2. How do you handle working in a fast-paced environment with multiple deadlines? Can you provide an example of a time when you had to prioritize tasks and manage your time effectively?\n3. What specific skills do you bring to the table that make you a good fit for this entry-level position?\n4. How do you stay motivated and continue to grow and develop your skills? Can you give an example of a time when you actively sought out opportunities for learning and self-improvement?";
 
     const handleInputChange = (e: any) => {
-        setInput(e.target.value);
+        setInput(e.target.inputText);
     };
 
     async function getQuestions() {
         try {
-            const prompt = `Generate a list of 4 interview questions based on the following job description, `;
+            const prompt = `Generate a list of 4 interview questions for an entry level position based on the following job description, `;
             const res = await openai.chat.completions.create({
                 messages: [{ role: 'user', content: prompt.concat(input) }],
                 model: 'gpt-3.5-turbo',
             });
             setOutput(res.choices[0].message.content);
-            console.log(res.choices[0].message.content);
+            console.log(res);
         } catch {
-            setError(true);
+            setError("Invalid input.");
         }
+    }
+
+    if (output) {
+        return (
+            <InterviewPage questions={output} />
+        )
     }
 
     return (
@@ -37,4 +46,4 @@ function GenerateQuestionsPage() {
     )
 }
   
-  export default GenerateQuestionsPage;
+export default GenerateQuestionsPage;
